@@ -1,19 +1,22 @@
 package com.liana.DaouShopping.user.model;
 
+import com.liana.DaouShopping.payments.model.Coupon;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
-public class User {
+import java.util.List;
+
+@Data
+public class UserInfo {
     private String userId;
-    private String userPw;
     private String userName;
     private String address1;
     private String address2;
     private long point;
 
     @Builder
-    public User(String userId, String userName,
+    public UserInfo(String userId, String userName,
                     String address1, String address2, long point){
         this.userId = userId;
         this.userName = userName;

@@ -64,3 +64,35 @@ insert into users(user_id, user_pw, user_name, address1,
                   address2, point)
 values ('daou', 'daou22!', '다우', '16878 경기도 용인시 수지구 디지털벨리로 81',
         '다우디지털스퀘어 6층', 5000);
+
+insert into users(user_id, user_pw, user_name, address1,
+                  address2, point)
+values ('sunyoung', 'sy2022!', '최선영', '서울시 광진구 123-45',
+        '303호', 5000);
+
+-- 쿠폰
+
+insert into coupons(coupon_id, coupon_name, exp_date, c_min, use_percent,
+                    c_percent_limit, c_price, c_percent)
+values (1, '5,000(신규회원 쿠폰, 1만원 이상 구매시)', 30, 10000, false,
+    0, 5000, 0);
+
+insert into coupons(coupon_id, coupon_name, exp_date, c_min, use_percent,
+                    c_percent_limit, c_price, c_percent)
+values (2, '30%(1만 5천원 이상 구매 시 최대 5천원 할인)', 10, 15000, true,
+    5000, 0, 30);
+
+-- 유저 쿠폰 부여
+
+insert into user_coupons(seq, coupon_id, user_id, exp_date, used_flag)
+values (1, 1, 'daou',TIMESTAMPADD(DAY, 30, NOW()), false);
+
+insert into user_coupons(seq, coupon_id, user_id, exp_date, used_flag)
+values (2, 2, 'daou',TIMESTAMPADD(DAY, 10, NOW()), false);
+
+insert into user_coupons(seq, coupon_id, user_id, exp_date, used_flag)
+values (3, 1, 'sunyoung',TIMESTAMPADD(DAY, 30, NOW()), false);
+
+insert into user_coupons(seq, coupon_id, user_id, exp_date, used_flag)
+values (4, 2, 'sunyoung',TIMESTAMPADD(DAY, 10, NOW()), false);
+

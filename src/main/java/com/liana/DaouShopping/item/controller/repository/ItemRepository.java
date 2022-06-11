@@ -8,9 +8,9 @@ import java.util.List;
 
 @Mapper
 public interface ItemRepository {
-    @Select("select * from items where parent_Id = 0")
-    public List<Item> findAll();
+    @Select("select * from items where item_id = parent_Id")
+    List<Item> findAll();
     @Select("SELECT * FROM items WHERE parent_id = #{id} ")
-    public List<Item> findById(long id);
+    List<Item> findById(long id);
 
 }
