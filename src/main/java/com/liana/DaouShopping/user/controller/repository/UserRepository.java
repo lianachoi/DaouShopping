@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 @Mapper
 public interface UserRepository {
-    @Select("SELECT * FROM USERS WHERE USER_ID = #{id} ")
+    @Select("SELECT * FROM USERS WHERE USER_ID = #{id}")
     User findById(String id);
 }

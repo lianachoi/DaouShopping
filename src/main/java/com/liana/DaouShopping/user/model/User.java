@@ -13,9 +13,10 @@ public class User {
     private long point;
 
     @Builder
-    public User(String userId, String userName,
-                    String address1, String address2, long point){
+    public User(String userId, String userPw, String userName,
+                String address1, String address2, long point){
         this.userId = userId;
+        this.userPw = userPw;
         this.userName = userName;
         this.address1 = address1;
         this.address2 = address2;

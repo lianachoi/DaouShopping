@@ -71,7 +71,7 @@ public class UserController {
         if(getUser==null) {
             throw new IdNotFoundException("회원정보를");
         }else {
-            if (getUser.getUserPw() == user.getUserPw()){
+            if (getUser.getUserPw().equals(user.getUserPw())){
                 // 유저정보 반환
                 UserInfo loginUser = UserInfo.builder()
                         .userId(getUser.getUserId())

@@ -10,7 +10,7 @@ import java.util.List;
 public interface ItemRepository {
     @Select("select * from items where item_id = parent_Id")
     List<Item> findAll();
-    @Select("SELECT * FROM items WHERE parent_id = #{id} ")
+    @Select("SELECT * FROM items WHERE parent_id = #{id}")
     List<Item> findById(long id);
 
 }
