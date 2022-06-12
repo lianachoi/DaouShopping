@@ -42,7 +42,7 @@ public class UserController {
                     continue;
                 // %쿠폰인지, 금액 할인쿠폰인지에 따라 분기
                 if (u.isUsePercent()){
-                    double salePrice = price * (u.getCPercent()/100);
+                    double salePrice = price * (u.getCPercent()/100.0);
                     if (salePrice > u.getCPercentLimit()){
                         u.setCalValue(u.getCPercentLimit());
                     }else{

@@ -79,8 +79,8 @@ values (1, '5,000(신규회원 쿠폰, 1만원 이상 구매시)', 30, 10000, fa
 
 insert into coupons(coupon_id, coupon_name, exp_date, c_min, use_percent,
                     c_percent_limit, c_price, c_percent)
-values (2, '30%(1만 5천원 이상 구매 시 최대 5천원 할인)', 10, 15000, true,
-    5000, 0, 30);
+values (2, '30%(1만 5천원 이상 구매 시 최대 1만원 할인)', 10, 15000, true,
+    10000, 0, 30);
 
 -- 유저 쿠폰 부여
 

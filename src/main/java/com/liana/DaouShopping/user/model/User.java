@@ -10,11 +10,11 @@ public class User {
     private String userName;
     private String address1;
     private String address2;
-    private long point;
+    private double point;
 
     @Builder
     public User(String userId, String userPw, String userName,
-                String address1, String address2, long point){
+                String address1, String address2, double point){
         this.userId = userId;
         this.userPw = userPw;
         this.userName = userName;

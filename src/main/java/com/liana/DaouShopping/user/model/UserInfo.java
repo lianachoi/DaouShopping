@@ -13,11 +13,11 @@ public class UserInfo {
     private String userName;
     private String address1;
     private String address2;
-    private long point;
+    private double point;
 
     @Builder
     public UserInfo(String userId, String userName,
-                    String address1, String address2, long point){
+                    String address1, String address2, double point){
         this.userId = userId;
         this.userName = userName;
         this.address1 = address1;

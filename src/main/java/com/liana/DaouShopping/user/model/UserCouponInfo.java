@@ -9,6 +9,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class UserCouponInfo {
+    private long seq;
     private long couponId;
     private String couponName;
     private double cMin;
@@ -24,9 +25,10 @@ public class UserCouponInfo {
     private double calValue;
 
     @Builder
-    public UserCouponInfo(long couponId, String couponName, double cMin, boolean usePercent,
+    public UserCouponInfo(long seq, long couponId, String couponName, double cMin, boolean usePercent,
                       double cPercentLimit, double cPrice, int cPercent, String userId,
                           Date expire, boolean usedFlag, double calValue){
+        this.seq = seq;
         this.couponId = couponId;
         this.couponName = couponName;
         this.cMin = cMin;

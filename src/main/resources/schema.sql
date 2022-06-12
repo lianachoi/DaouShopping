@@ -37,10 +37,11 @@ create table users
 create table orders
 (
     order_id varchar(30) not null,
-    user_id integer not null,
+    user_id varchar(30) not null,
     order_date date not null,
     use_point integer default 0,
     use_coupon integer default 0,
+    coupon_seq integer default 0,
     new_point integer default 0,
     status integer, -- 기준정보 테이블 코드로 관리 (status)
     use_card boolean,
