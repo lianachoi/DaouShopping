@@ -2,10 +2,12 @@ package com.liana.DaouShopping.order.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
 public class Order {
     private String orderId;
     private String userId;

@@ -2,9 +2,11 @@ package com.liana.DaouShopping.order.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
+@NoArgsConstructor
 public class OrderItem {
     private long itemSeq;
     private String orderId;

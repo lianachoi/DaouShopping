@@ -96,3 +96,8 @@ values (3, 1, 'sunyoung',TIMESTAMPADD(DAY, 30, NOW()), false);
 insert into user_coupons(seq, coupon_id, user_id, exp_date, used_flag)
 values (4, 2, 'sunyoung',TIMESTAMPADD(DAY, 10, NOW()), false);
 
+-- 입금계좌, 사용자 계좌
+
+insert into accounts(account_id, valance) values ('1002-958-955-866', 0);
+insert into accounts(account_id, valance) values ('1234-56789-12345', 1000000);
+insert into accounts(account_id, valance) values ('1234', 1000000);

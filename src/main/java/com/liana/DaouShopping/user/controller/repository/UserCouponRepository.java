@@ -18,6 +18,6 @@ public interface UserCouponRepository {
     List<UserCouponInfo> findById(String id);
 
 
-    @Update("UPDATE USER_COUPONS SET USED_FLAG=TRUE WHERE SEQ = #{seq}")
-    int update(long seq);
+    @Update("UPDATE USER_COUPONS SET USED_FLAG=#{usedFlag} WHERE SEQ = #{seq}")
+    int update(boolean usedFlag, long seq);
 }
