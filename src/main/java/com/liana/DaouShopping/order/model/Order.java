@@ -17,11 +17,15 @@ public class Order {
     private int status;
     private boolean useCard;
     private String vAccount;
+    private String userName;
+    private String address1;
+    private String address2;
 
     @Builder
     public Order(String orderId, String userId, Date orderDate,
                  long usePoint, double useCoupon, long couponSeq, double newPoint,
-                 int status, boolean useCard, String vAccount){
+                 int status, boolean useCard, String vAccount,
+                 String userName, String address1, String address2){
         this.orderId = orderId;
         this.userId = userId;
         this.orderDate = orderDate;
@@ -32,5 +36,8 @@ public class Order {
         this.status = status;
         this.useCard = useCard;
         this.vAccount = vAccount;
+        this.userName = userName;
+        this.address1 = address1;
+        this.address2 = address2;
     }
 }

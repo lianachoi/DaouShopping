@@ -37,7 +37,7 @@ create table users
 create table orders
 (
     order_id varchar(30) not null,
-    user_id varchar(30) not null,
+    user_id varchar(30),
     order_date date not null,
     use_point integer default 0,
     use_coupon integer default 0,
@@ -46,13 +46,16 @@ create table orders
     status integer, -- 기준정보 테이블 코드로 관리 (status)
     use_card boolean,
     v_account varchar(20), -- 입금받을 가상계좌
+    user_name varchar(30), -- 유저가 넣은 새로운 이름 또는 유저의 이름
+    address1 varchar(100), -- 유저가 넣은 새로운 주소 또는 유저의 주소
+    address2 varchar(100), -- 유저가 넣은 새로운 주소 또는 유저의 주소
     primary key(order_id),
     foreign key (user_id) references users(user_id)
 );
 
 create table order_items
 (
-    item_seq integer not null,
+    item_seq integer AUTO_INCREMENT not null,
     order_id varchar(30) not null,
     item_id integer not null,
     option_id integer not null,

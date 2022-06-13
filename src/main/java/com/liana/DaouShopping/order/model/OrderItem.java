@@ -3,7 +3,6 @@ package com.liana.DaouShopping.order.model;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Date;
 
 @Data
 public class OrderItem {
