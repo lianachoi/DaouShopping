@@ -2,10 +2,7 @@ package com.liana.DaouShopping.payments.controller.repository;
 
 import com.liana.DaouShopping.payments.model.Account;
 import com.liana.DaouShopping.payments.model.AccountHis;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface AccountRepository {
@@ -18,6 +15,9 @@ public interface AccountRepository {
             "VALUES ( #{fromId}, #{toId}, #{tranDate}, #{tranAmount})")
     int insertHis(AccountHis accountHis);
 
+    @Select("SELECT * FROM ACCOUNT_HIS WHERE TO_ID = #{id}")
+    AccountHis findHisByAccount(String id);
+
     @Select("SELECT * FROM ACCOUNTS WHERE ACCOUNT_ID = #{id}")
     Account findById(String id);
 
@@ -26,4 +26,7 @@ public interface AccountRepository {
 
     @Update("UPDATE ACCOUNTS SET VALANCE=#{valance} WHERE ACCOUNT_ID=#{accountId}")
     void update(Account account);
+
+    @Delete("DELETE ACCOUNTS WHERE ACCOUNT_ID=#{id}")
+    void delete(String id);
 }

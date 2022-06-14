@@ -66,7 +66,9 @@ com.liana.DaouShopping/DaouShoppingApplication.java
 서버 시작 후 아래 링크로 접속   
 서버 실행 시 table 과 기본 데이터는 생성됩니다.   
 http://localhost:8080/h2-console/login.jsp
-
+* [JDBC URL]   jdbc:h2:mem:daoushopdb
+* [User Name] sa
+* [assword] (없음)
 
 # Swagger API 명세
 서버 시작 후 아래 링크로 접속   
