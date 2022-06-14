@@ -55,16 +55,18 @@ com.liana.DaouShopping/DaouShoppingApplication.java
 해당 파일을 마우스 오른쪽으로 클릭한 후 Run 'DaouShoppingApplication'
 ```
 
+### 테스트 데이터
+* 로그인 기능 이용 시 > id: daou / pw: daou22!
+* 계좌이체 기능 이용 시 > 계좌번호: 1234 (1,000,000원)
+* 입금계좌는 주문번호의 '-' 뒤 여섯글자입니다.   
+  (ex. 주문번호: 140622000000-123456, 입금계좌: 123456)
+
 
 ### H2 Console
 서버 시작 후 아래 링크로 접속   
 서버 실행 시 table 과 기본 데이터는 생성됩니다.   
 http://localhost:8080/h2-console/login.jsp
 
-* 로그인 기능 이용 시 > id: daou / pw: daou22!
-* 계좌이체 기능 이용 시 > 계좌번호: 1234 (1,000,000원)
-* 입금계좌는 주문번호의 '-' 뒤 여섯글자입니다.   
-(ex. 주문번호: 140622000000-123456, 입금계좌: 123456)
 
 # Swagger API 명세
 서버 시작 후 아래 링크로 접속   
