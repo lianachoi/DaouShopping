@@ -68,7 +68,7 @@ com.liana.DaouShopping/DaouShoppingApplication.java
 http://localhost:8080/h2-console/login.jsp
 * [JDBC URL]   jdbc:h2:mem:daoushopdb
 * [User Name] sa
-* [assword] (없음)
+* [Password] (없음)
 
 # Swagger API 명세
 서버 시작 후 아래 링크로 접속   
