@@ -10,6 +10,7 @@ import com.liana.DaouShopping.user.model.User;
 import com.liana.DaouShopping.user.model.UserCoupon;
 import com.liana.DaouShopping.user.model.UserCouponInfo;
 import com.liana.DaouShopping.user.model.UserInfo;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,9 @@ public class UserController {
 
     // get coupons of user by id
     @GetMapping("/{id}/coupons")
+    @ApiOperation(value = "Get Coupon By Id / 사용자 쿠폰 조회"
+            , notes = "Get all usable coupons user have. Sort coupons by amount." +
+            "\n사용자가 가진 모든 사용가능한 쿠폰을 조회합니다. 금액 순으로 쿠폰을 정렬합니다.")
     public ResponseEntity<List<UserCouponInfo>> getCouponById(@PathVariable String id,
                                                               @RequestParam(value="price", required = false, defaultValue = "0") double price) {
         List<UserCouponInfo> userCouponInfoList = userCouponRepository.findById(id);
@@ -66,6 +70,9 @@ public class UserController {
 
     //user login
     @PostMapping
+    @ApiOperation(value = "Get User Information / 사용자 정보 조회"
+            , notes = "If user inputs correct ID & PW, return information." +
+            "\n 사용자가 ID, PW를 맞게 입력하면 사용자 정보를 반환합니다.")
     public ResponseEntity<?> login(@RequestBody User user)  {
         User getUser = userRepository.findById(user.getUserId());
         if(getUser==null) {

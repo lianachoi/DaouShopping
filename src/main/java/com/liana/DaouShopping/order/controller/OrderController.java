@@ -14,6 +14,7 @@ import com.liana.DaouShopping.payments.service.PaymentService;
 import com.liana.DaouShopping.user.controller.repository.UserCouponRepository;
 import com.liana.DaouShopping.user.controller.repository.UserRepository;
 import com.liana.DaouShopping.user.model.User;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,6 +41,11 @@ public class OrderController {
     private final AccountRepository accountRepository;
 
     @PostMapping
+    @ApiOperation(value = "Create Order 주문서 생성",
+            notes = "Create an order form from user inputs. " +
+                    "Create virtual account and use user's points and a coupon." +
+                    "\n사용자가 입력한 정보로 주문서를 만듭니다." +
+                    "가상 계좌를 만들고 사용자 포인트와 쿠폰을 차감합니다.")
     public ResponseEntity<?> createOrder(@RequestBody OrderInfo orderInfo) {
         //화면에서 받은 정보
         Order order = orderInfo.getOrder();
@@ -88,6 +94,13 @@ public class OrderController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "Cancel Order / 주문 취소",
+            notes = "Update the order status to CANCEL. " +
+                    "Return the points and the coupon to the user." +
+                    "If the user has made a deposit, refund it too." +
+                    "\n주문의 상태를 취소로 변경합니다." +
+                    "사용 포인트와 쿠폰을 사용자에게 반환합니다." +
+                    "사용자가 입금한 경우 환불합니다.")
     public ResponseEntity<Order> cancelOrder(@PathVariable String id) {
         Order order = orderRepository.findById(id);
         User user = null;
@@ -120,6 +133,9 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
+    @ApiOperation(value = "Get Order By Id / 주문 조회",
+            notes = "Search order details with the ID." +
+                    "\n주문 ID 로 주문상세 내역을 조회합니다.")
     public ResponseEntity<OrderInfo> getOrderById(@PathVariable String id) {
         return ResponseEntity.ok(orderService.getOrderById(id));
     }

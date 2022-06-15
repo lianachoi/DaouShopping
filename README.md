@@ -5,6 +5,12 @@ Web Application 개발 경력 채용 기술과제 입니다.
 
 * [daou-shopping](https://github.com/lianachoi/daou-shopping) - 쇼핑몰 상품 주문 관리 화면으로 이동
 
+## Updates
+#### 2022.06.16
+@ApiOperation 어노테이션을 이용해 Swagger Api 명세서 작성   
+Readme 에 html 압축 파일 업로드
+   
+   
 
 ## Getting Started
 
@@ -73,6 +79,10 @@ http://localhost:8080/h2-console/login.jsp
 # Swagger API 명세
 서버 시작 후 아래 링크로 접속   
 http://localhost:8080/swagger-ui/index.html
+
+![image](https://user-images.githubusercontent.com/24507556/173870019-d97c0c68-8f23-4f57-aeac-a6f28c0a2f69.png)
+서버를 실행할 수 없는 경우 아래 html 로 저장한 swagger 화면을 볼 수 있습니다.   
+[Swagger UI.zip](https://github.com/lianachoi/daou-shopping/files/8910994/Swagger.UI.zip)
 
 # 도메인 설계
 ![image](https://user-images.githubusercontent.com/24507556/173575715-51165cf7-b8fd-4acf-80b9-c61b60e75467.png)

@@ -12,6 +12,7 @@ import com.liana.DaouShopping.payments.model.Account;
 import com.liana.DaouShopping.payments.model.AccountHis;
 import com.liana.DaouShopping.user.controller.repository.UserRepository;
 import com.liana.DaouShopping.user.model.User;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,7 @@ public class PaymentController {
     private final UserRepository userRepository;
 
     @GetMapping("/account/{id}")
+    @ApiOperation(value = "Get Valance Of Account By Id / 계좌번호의 잔액 확인")
     public ResponseEntity<Account> getValanceOfAccountById(@PathVariable String id)  {
         Account account = accountRepository.findById(id);
         if(account==null)
@@ -39,6 +41,7 @@ public class PaymentController {
     }
 
     @GetMapping("/account/{id}/order")
+    @ApiOperation(value = "Get Order By Virtual Account / 가상계좌로 주문 조회")
     public ResponseEntity<OrderInfo> getOrderByVAccount(@PathVariable String id)  {
         String orderId = accountRepository.findOrderByAccount(id);
         return ResponseEntity.ok(orderService.getOrderById(orderId));
@@ -46,6 +49,9 @@ public class PaymentController {
 
     @PutMapping("/account")
     @Transactional
+    @ApiOperation(value = "Deposit / 입금"
+            , notes = "Make a transfer and a record. Update order & user status." +
+            "\n계좌 이체를 하고 이체 기록을 생성합니다. 주문과 유저정보를 업데이트합니다.")
     public ResponseEntity<?> updateValance(@RequestBody AccountHis accountHis){
         accountRepository.insertHis(accountHis);
 
