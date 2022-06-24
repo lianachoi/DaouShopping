@@ -24,7 +24,7 @@ Readme 에 html 압축 파일 업로드
 * Java 8 (java version "1.8.0_171")
 * SpringBoot 2.7.0 (Spring 5.3.20)
 * Maven2 build
-* MyBatis 2.2.2
+* MyBatis 3.5.9
 * h2 2.1.212
 * lombok 1.18.24
 
